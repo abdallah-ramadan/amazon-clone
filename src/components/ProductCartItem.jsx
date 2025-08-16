@@ -14,7 +14,7 @@ function ProductCartItem() {
                         The Blue & Black Check Shirt is a stylish and comfortable men's shirt featuring a classic check pattern.
                         Made from high-quality fabric, it's suitable for both casual and semi-formal occasions.
                     </p>
-                    <p className=' font-semibold text-[28px]'>₹29.99.00</p>
+                    <p className=' font-medium text-[28px]'><span className=' text-yellow-600 font-semibold'>EGP</span>29.99</p>
                     <p className=' text-green-700'>In Stock</p>
                     <div className='flex flex-col md:flex-row md:justify-between justify-center items-center'>
                         <div className='flex gap-5 text-[12px] sm:text-[16px]'>
