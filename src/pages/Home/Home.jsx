@@ -8,8 +8,10 @@ import img3 from '../../assets/banner/bannerImage3.jpg'
 import img4 from '../../assets/banner/bannerImage4.jpg'
 import img5 from '../../assets/banner/bannerImage5.jpg'
 import Categories from '../../components/categories/Categories';
+import { useNavigate } from "react-router-dom";
 export default function Home() {
-const sliderRef = useRef(null);
+    const sliderRef = useRef(null);
+    const navigate = useNavigate();
     const scroll = (direction) => {
     if (sliderRef.current) {
         sliderRef.current.scrollBy({
@@ -18,28 +20,7 @@ const sliderRef = useRef(null);
         });
         }
     };
-
-    const productsData = [
-    { image: 'https://cdn.salla.sa/gGPZZ/Gp5b0I9MwLP7zOeirRRsuH29DvbupfmAHhMA5Pn1.jpg' ,title: 'Socks'},
-    { image: 'https://media.zid.store/thumbs/2ff4562e-1d61-407a-983e-ae38443d28fd/ad4139ea-5f2a-443c-917b-2c62558a59ee-thumbnail-1000x1000.png' ,title: 'Socks' },
-    { image: 'https://cdn.salla.sa/gGPZZ/Gp5b0I9MwLP7zOeirRRsuH29DvbupfmAHhMA5Pn1.jpg' ,title: 'Socks'},
-    { image: 'https://media.zid.store/thumbs/2ff4562e-1d61-407a-983e-ae38443d28fd/ad4139ea-5f2a-443c-917b-2c62558a59ee-thumbnail-1000x1000.png' ,title: 'Socks'},
-    { image: 'https://cdn.salla.sa/gGPZZ/Gp5b0I9MwLP7zOeirRRsuH29DvbupfmAHhMA5Pn1.jpg' ,title: 'Socks'},
-    { image: 'https://media.zid.store/thumbs/2ff4562e-1d61-407a-983e-ae38443d28fd/ad4139ea-5f2a-443c-917b-2c62558a59ee-thumbnail-1000x1000.png' ,title: 'Socks'},
-    { image: 'https://cdn.salla.sa/gGPZZ/Gp5b0I9MwLP7zOeirRRsuH29DvbupfmAHhMA5Pn1.jpg' ,title: 'Socks'},
-    { image: 'https://media.zid.store/thumbs/2ff4562e-1d61-407a-983e-ae38443d28fd/ad4139ea-5f2a-443c-917b-2c62558a59ee-thumbnail-1000x1000.png' ,title: 'Socks'},
-    { image: 'https://cdn.salla.sa/gGPZZ/Gp5b0I9MwLP7zOeirRRsuH29DvbupfmAHhMA5Pn1.jpg' ,title: 'Socks'},
-    { image: 'https://media.zid.store/thumbs/2ff4562e-1d61-407a-983e-ae38443d28fd/ad4139ea-5f2a-443c-917b-2c62558a59ee-thumbnail-1000x1000.png' ,title: 'Socks'},
-    { image: 'https://cdn.salla.sa/gGPZZ/Gp5b0I9MwLP7zOeirRRsuH29DvbupfmAHhMA5Pn1.jpg' ,title: 'Socks'},
-    { image: 'https://media.zid.store/thumbs/2ff4562e-1d61-407a-983e-ae38443d28fd/ad4139ea-5f2a-443c-917b-2c62558a59ee-thumbnail-1000x1000.png' ,title: 'Socks'},
-    { image: 'https://cdn.salla.sa/gGPZZ/Gp5b0I9MwLP7zOeirRRsuH29DvbupfmAHhMA5Pn1.jpg' ,title: 'Socks'},
-    { image: 'https://media.zid.store/thumbs/2ff4562e-1d61-407a-983e-ae38443d28fd/ad4139ea-5f2a-443c-917b-2c62558a59ee-thumbnail-1000x1000.png' ,title: 'Socks'},
-    { image: 'https://cdn.salla.sa/gGPZZ/Gp5b0I9MwLP7zOeirRRsuH29DvbupfmAHhMA5Pn1.jpg' ,title: 'Socks'},
-    { image: 'https://media.zid.store/thumbs/2ff4562e-1d61-407a-983e-ae38443d28fd/ad4139ea-5f2a-443c-917b-2c62558a59ee-thumbnail-1000x1000.png' ,title: 'Socks'},
-    { image: 'https://cdn.salla.sa/gGPZZ/Gp5b0I9MwLP7zOeirRRsuH29DvbupfmAHhMA5Pn1.jpg' ,title: 'Socks'},
-    { image: 'https://media.zid.store/thumbs/2ff4562e-1d61-407a-983e-ae38443d28fd/ad4139ea-5f2a-443c-917b-2c62558a59ee-thumbnail-1000x1000.png' ,title: 'Socks'},
-    { image: 'https://cdn.salla.sa/gGPZZ/Gp5b0I9MwLP7zOeirRRsuH29DvbupfmAHhMA5Pn1.jpg' ,title: 'Socks'},
-    ];
+    const productsData = [];
     return (
         <div >
             {/* slider */}
@@ -87,7 +68,7 @@ const sliderRef = useRef(null);
             <Categories />
 
             {/* Best Sellers */}
-            <div className="position-relative p-3 container mb-5 mt-2">
+            <div className="position-relative p-3 container mb-5 mt-2 bg-white">
                 <h5 className="fw-bold mb-3">Min. 50% off | Unique kitchen finds | Amazon Brands & more</h5>
 
                 <button onClick={() => scroll("left")} className="btn btn-light position-absolute top-50 start-0 translate-middle-y py-4 fs-5">
@@ -99,11 +80,8 @@ const sliderRef = useRef(null);
 
                 <div ref={sliderRef} className="d-flex flex-row overflow-auto gap-4" style={{ scrollBehavior: "smooth" }}>
                     {productsData.map((product, index) => (
-                        <div key={index} className="d-flex flex-column align-items-center flex-shrink-0">
-                            <div
-                            className="bg-light d-flex justify-content-center align-items-center mb-2"
-                            style={{ width: "150px", height: "150px" }}
-                            >
+                        <div key={index} className="d-flex flex-column align-items-center flex-shrink-0" style={{cursor: "pointer"}} onClick={() => navigate(`${product.title}`)}>
+                            <div className=" d-flex justify-content-center align-items-center mb-2" style={{ width: "150px", height: "150px" }}>
                             <img src={product.image} alt="product" className="img-fluid w-100 h-100" />
                             </div>
                             <p className="small text-center">{product.title}</p>
