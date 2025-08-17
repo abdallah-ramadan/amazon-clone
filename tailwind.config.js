@@ -1,4 +1,6 @@
 export default  {
+  important: true,
+  prefix: 'tw-',
   theme: {
     container: {
       center: true,      
