@@ -2,7 +2,7 @@ import Cart from './pages/Cart'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Register from './pages/Register'
-import { Products } from './pages/Products'
+import { ProductsPage } from './pages/ProductsPage'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductDetails from './pages/ProductDetails'
@@ -19,7 +19,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/product-details' element={<ProductDetails />} />
-          <Route path='/products' element={<Products />} />
+          <Route path='/products' element={<ProductsPage />} />
         </Routes>
       </Router>
     </>
