@@ -3,7 +3,7 @@ function Button({ children, onClick, type = "button" }) {
     <button
       type={type}
       onClick={onClick}
-      className="w-full bg-yellow-300 hover:bg-yellow-400 text-black font-medium py-2 rounded-md text-xs text-gray-700 mt-3"
+      className="tw-w-full tw-bg-yellow-300 hover:tw-bg-yellow-400 tw-font-medium tw-py-2 tw-rounded-md tw-text-xs tw-text-gray-700 tw-mt-3"
     >
       {children}
     </button>

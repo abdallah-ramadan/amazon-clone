@@ -1,8 +1,7 @@
 import React from "react";
-import { Products } from "./Products";
-import ArrayProducts from "../../../productData";
-import { Sidebar } from "../../components/Sidebar";
-
+import { Products } from "../components/products/Products";
+import ArrayProducts from "../../productData";
+import { Sidebar } from "../components/products/Sidebar";
 
 export const ProductsPage = () => {
     return (

@@ -1,7 +1,8 @@
 import Cart from './pages/Cart'
 import Login from './pages/Login'
+import Home from './pages/Home'
 import Register from './pages/Register'
-import { ProductsPage } from './pages/Products/ProductsPage'
+import { Products } from './pages/Products'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductDetails from './pages/ProductDetails'
@@ -13,11 +14,12 @@ function App() {
     <>
       <Router>
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='/Products' element={<ProductsPage />} />
           <Route path='/product-details' element={<ProductDetails />} />
+          <Route path='/products' element={<Products />} />
         </Routes>
       </Router>
     </>

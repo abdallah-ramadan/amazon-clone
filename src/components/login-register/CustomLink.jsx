@@ -2,7 +2,7 @@ function CustomLink({ href = "#", children }) {
   return (
     <a
       href={href}
-      className="text-sky-600 underline hover:text-yellow-500"
+      className="tw-text-sky-600 tw-underline hover:tw-text-yellow-500"
     >
       {children}
     </a>
