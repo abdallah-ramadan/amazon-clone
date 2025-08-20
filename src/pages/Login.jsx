@@ -1,20 +1,21 @@
-import LoginFooter from "../components/LoginFooter"
-import Logo from '../assets/Images/logo.png'
+
+import LoginFooter from "../components/login-register/LoginFooter"
+import Logo from '../assets/Images/Logo.png'
 import React from "react"
-import Button from "../components/Button"
-import Input from "../components/Input"
-import CustomLink from "../components/CustomLink"
+import Button from "../components/login-register/Button"
+import Input from "../components/login-register/Input"
+import CustomLink from "../components/login-register/CustomLink"
 import { Link } from "react-router-dom";
 function Login() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen mt-5 bg-white-100 " style={{ fontFamily: '"Amazon Ember", Arial, sans-serif' }}>
-        <img src={Logo} alt="Amazon Logo" className="w-30 mb-6" />
-        <div className="w-[350px] bg-white border border-gray-300 rounded-md p-6">
-          <h1 className="text-2xl font-medium mb-4">Sign in</h1>
-          <form className="flex flex-col space-y-4">
+      <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-min-h-screen tw-mt-5 tw-bg-white-100" style={{ fontFamily: '"Amazon Ember", Arial, sans-serif' }}>
+        <img src={Logo} alt="Amazon Logo" className="tw-w-32 tw-mb-6" />
+        <div className="tw-w-[350px] tw-bg-white tw-border tw-border-gray-300 tw-rounded-md tw-p-6">
+          <h1 className="tw-text-2xl tw-font-medium tw-mb-4">Sign in</h1>
+          <form className="tw-flex tw-flex-col tw-space-y-4">
             <div>
-              <label className="text-sm font-semibold">Email or mobile phone number</label>
+              <label className="tw-text-sm tw-font-semibold">Email or mobile phone number</label>
               <Input
                 type="text"
               />
@@ -22,35 +23,35 @@ function Login() {
             <Button type="submit">
               Continue
             </Button>
-            <p className="text-xs text-gray-800">
-              By continuing, you agree to Amazon’s{" "}
+            <p className="tw-text-xs tw-text-gray-800">
+              By continuing, you agree to Amazon's{" "}
               <CustomLink href="#">Conditions of Use</CustomLink>{" "}
               and{" "}
               <CustomLink href="#">Privacy Notice</CustomLink>{" "}
               and{" "}
             </p>
 
-            <a href="#" className="text-sky-600 text-sm hover:underline hover:text-yellow-500"><span className="inline-block w-0 h-0 border-l-4 border-t-4 border-b-4 border-transparent border-l-black ml-1"></span>Need help?</a>
+            <a href="#" className="tw-text-sky-600 tw-text-sm hover:tw-underline hover:tw-text-yellow-500"><span className="tw-inline-block tw-w-0 tw-h-0 tw-border-l-4 tw-border-t-4 tw-border-b-4 tw-border-transparent tw-border-l-black tw-ml-1"></span>Need help?</a>
           </form>
 
-          <hr className="my-4" />
-          <h2 className="text-sm font-semibold">Buying for work?</h2>
+          <hr className="tw-my-4" />
+          <h2 className="tw-text-sm tw-font-semibold">Buying for work?</h2>
           <a
             href="#"
-            className="text-sky-600 text-sm hover:underline hover:text-yellow-500"
+            className="tw-text-sky-600 tw-text-sm hover:tw-underline hover:tw-text-yellow-500"
           >
             Shop on Amazon Business
           </a>
 
         </div>
-        <div className="w-[350px] mt-4">
-          <div className="flex items-center">
-            <div className="flex-grow h-px bg-gray-300"></div>
-            <span className="px-2 text-gray-600 text-sm">New to Amazon?</span>
-            <div className="flex-grow h-px bg-gray-300"></div>
+        <div className="tw-w-[350px] tw-mt-4">
+          <div className="tw-flex tw-items-center">
+            <div className="tw-flex-grow tw-h-px tw-bg-gray-300"></div>
+            <span className="tw-px-2 tw-text-gray-600 tw-text-sm">New to Amazon?</span>
+            <div className="tw-flex-grow tw-h-px tw-bg-gray-300"></div>
           </div>
           <button
-            className="w-full mt-3 border border-gray-300 rounded-sm py-1 bg-gray-50 hover:bg-gray-100"
+            className="tw-w-full tw-mt-3 tw-border tw-border-gray-300 tw-rounded-sm tw-py-1 tw-bg-gray-50 hover:tw-bg-gray-100"
           >
             <Link to="/register">
               Create your Amazon account
@@ -62,5 +63,4 @@ function Login() {
     </>
   )
 }
-
 export default Login
