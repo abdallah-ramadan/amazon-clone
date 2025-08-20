@@ -1,9 +1,9 @@
-import LoginFooter from "./LoginFooter"
+import LoginFooter from "../components/LoginFooter"
 import Logo from '../assets/Images/logo.png'
 import React from "react"
-import Button from "./Button"
-import Input from "./Input"
-import CustomLink from "./CustomLink"
+import Button from "../components/Button"
+import Input from "../components/Input"
+import CustomLink from "../components/CustomLink"
 import { Link } from "react-router-dom";
 function Login() {
   return (

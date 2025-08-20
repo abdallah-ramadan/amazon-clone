@@ -1,8 +1,8 @@
 import Logo from '../assets/Images/logo.png'
-import LoginFooter from './LoginFooter'
-import Input from './Input'
-import Button from './Button'
-import CustomLink from './CustomLink'
+import LoginFooter from '../components/LoginFooter'
+import Input from '../components/Input'
+import Button from '../components/Button'
+import CustomLink from '../components/CustomLink'
 import { Link } from 'react-router-dom'
 function Register() {
   return (

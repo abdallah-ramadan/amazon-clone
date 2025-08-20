@@ -1,8 +1,9 @@
 import './App.css'
 import Cart from './pages/Cart'
-import Login from './components/Login'
-import Register from './components/Register'
+import Login from './pages/Login'
+import Register from './pages/Register'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CartOtherProduct from './components/CartOtherProductItem';
 
 function App() {
 
