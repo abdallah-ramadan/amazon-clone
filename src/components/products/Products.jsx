@@ -1,17 +1,11 @@
 import React from "react";
 import "./Products.css";
 import { StarRate } from "./StarRate";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Products = ({ products }) => {
-    const navigate = useNavigate();
-
-    const handleCardClick = (product) => {
-        navigate(`/category/${product.category}/product/${product.id}`);
-    };
-
     const handleAddToCart = (e, product) => {
-        e.stopPropagation(); 
+        e.stopPropagation();
         console.log("Added to cart:", product);
     };
 
@@ -19,10 +13,10 @@ export const Products = ({ products }) => {
         <section className="col-lg-10 col-md-9 px-2">
             <div className="products-grid">
                 {products?.map((product) => (
-                    <div
+                    <NavLink
+                        to={`/product-details/${product.id}`}
                         className="product-card"
                         key={product.id}
-                        onClick={() => handleCardClick(product)}
                     >
                         <div className="img-card-container">
                             <img src={product.thumbnail || product.images?.[0]} alt={product.title} />
@@ -42,7 +36,7 @@ export const Products = ({ products }) => {
 
                             <div className="mb-2">
                                 <span className="price">
-                                    ₹{product.price?.toLocaleString("en-IN") ?? "N/A"} 
+                                    ₹{product.price?.toLocaleString("en-IN") ?? "N/A"}
                                 </span>
                                 <small className="ms-2">
                                     <span className="discount-rate">
@@ -65,7 +59,7 @@ export const Products = ({ products }) => {
                                 Add to cart
                             </button>
                         </div>
-                    </div>
+                    </NavLink>
                 ))}
             </div>
         </section>

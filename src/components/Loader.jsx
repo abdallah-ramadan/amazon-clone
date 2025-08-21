@@ -5,4 +5,4 @@ export const Loader = () => (
             <span className="visually-hidden">Loading...</span>
         </div>
     </div>
-    );
+);
