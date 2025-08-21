@@ -9,15 +9,35 @@ export const ProductsPage = () => {
     const { category } = useParams();   
     const [products, setProducts] = useState([]);
 
+    const [selectedBrands, setSelectedBrands] = useState([]);
+    const [selectedPriceRange, setSelectedPriceRange] = useState(null);
+    const [selectedRating, setSelectedRating] = useState(null);
+
     useEffect(() => {
         setLoading(true);
-        fetch(`https://dummyjson.com/products/category/${category || "smartphones"}`)
+        fetch(`https://dummyjson.com/products/category/${category}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data.products);
                 setLoading(false);
             });
     }, [category]); 
+
+    const getFilteredProducts = () => {
+        return products.filter(product => {
+            let matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
+            let matchesPrice = true;
+            if (selectedPriceRange) {
+                const [min, max] = selectedPriceRange;
+                matchesPrice = product.price >= min && product.price <= max;
+            }
+            let matchesRating = selectedRating ? product.rating >= selectedRating : true;
+
+            return matchesBrand && matchesPrice && matchesRating;
+        });
+    };
+
+
     return (
         <main className="w-100 my-5">
             <div className="d-flex justify-content-center w-100 main-products-container">
@@ -26,9 +46,14 @@ export const ProductsPage = () => {
                         <Loader />
                     :
                         <>
-                            <Sidebar products={products}/>
-                            <Products products={products}/>
-                            
+                            <Sidebar 
+                                products={products} 
+                                selectedBrands={selectedBrands}
+                                setSelectedBrands={setSelectedBrands}
+                                setSelectedPriceRange={setSelectedPriceRange}
+                                setSelectedRating={setSelectedRating}
+                            />
+                            <Products products={getFilteredProducts()} />
                         </>
                 }
             </div>
