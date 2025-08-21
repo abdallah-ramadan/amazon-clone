@@ -1,4 +1,4 @@
-# .gitignore
+
 # Logs
 logs
 *.log
@@ -26,3 +26,4 @@ dist-ssr
 *.swp
 *.swo
 .env
+
