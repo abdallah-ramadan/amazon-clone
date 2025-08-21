@@ -4,12 +4,9 @@
     position: relative;
 }
 .category .card:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
     cursor: pointer;
 }
 .category-item img{
     height: 100px;
-}
-.category-item:hover{
-    color: rgb(25, 25, 195);
 }
