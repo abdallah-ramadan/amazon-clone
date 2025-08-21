@@ -175,19 +175,9 @@ const ProductDetails = () => {
           {/* Product Details */}
           <div>
             <h3 className="tw-font-bold tw-text-lg tw-mb-3">About this item</h3>
-            <ul className="tw-space-y-2 tw-text-sm tw-text-gray-700">
-              <li>
-                • Powerful wash that is Kind and soft, gentle on fabrics, yet
-                tough on stains
-              </li>
-              <li>• Beat's dirty items</li>
-              <li>• Smart tub clean alerts and 6 soft and comfortable</li>
-              <li>• Fully automatic top loading, 460 mm, Wi-Fi enabled</li>
-              <li>• Stainless cassual</li>
-              <li>
-                • Care beyond clean: Machine wash or professional dry clean
-              </li>
-            </ul>
+            <p className="tw-space-y-2 tw-text-sm tw-text-gray-700">
+              {product.description}
+            </p>
           </div>
         </div>
         <div className="reviews"></div>
