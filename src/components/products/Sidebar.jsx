@@ -30,7 +30,7 @@ export const Sidebar = ({ products }) => {
                         <div className="form-check" key={index}>
                             <input
                                 className="form-check-input"
-                                type="radio"
+                                type="checkbox"
                                 id={`brand-${index}`}
                             />
                             <label className="form-check-label" htmlFor={`brand-${index}`}>
@@ -53,7 +53,7 @@ export const Sidebar = ({ products }) => {
                     <div className="form-check">
                         <input className="form-check-input" type="radio" name="price" id="price2" />
                         <label className="form-check-label" htmlFor="price2">
-                            ₹5900 to ₹10,000
+                            ₹5,900 to ₹10,000
                         </label>
                     </div>
                     <div className="form-check">
