@@ -22,6 +22,11 @@ const ProductDetails = () => {
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
+ raniamedhat
+  // const navigate = useNavigate();
+
+
+ master
   const handleBuyNow = () => {
     if (!auth.currentUser) {
       navigate("/login");
