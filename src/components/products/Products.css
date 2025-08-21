@@ -13,7 +13,7 @@ body{
 .products-grid {
     display: grid;
     row-gap: 0.8rem;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     justify-items: center;
 }
 
@@ -25,8 +25,10 @@ body{
     border: 1.08px solid #d9d9d9;
     transition: all 0.3s ease-in-out;
     max-width: 300px;
+    min-width: 96%;
     height: 100%; 
     margin-inline: 0.5rem;
+    cursor: pointer;
 }
 
 .product-card .card-body {
@@ -56,6 +58,18 @@ body{
 
 .card-title {
     margin-bottom: 0.6rem !important;
+    font-weight: 600;
+}
+
+
+
+.card-description{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #717171;
 }
 
 .product-review-number{
@@ -70,6 +84,7 @@ body{
     font-size: 0.9rem;
     font-weight: 400;
 }
+
 
 .price{
     color: #000000;
@@ -91,16 +106,25 @@ body{
     font-weight: 600;
 }
 
-.btn{
-    background-color: #FFCC00;
+.my-btn{
+    background-color: #FFCC00 !important;
     border-radius: 19.81px;
     padding-inline: 10px;
     transition: all 0.3s ease-in-out;
 }
 
-.btn:hover{
-    background-color: #FF9900;
-    color: #d9d9d9;
+.my-btn:hover{
+    background-color: #FF9900 !important;
+    color: #FFFFFF !important;
+}
+
+.my-secound-btn{
+    background-color: transparent !important;
+    border: 1px solid #FFCC00 !important;
+}
+
+.my-secound-btn:hover{
+    background-color: #FFCC00 !important;
 }
 
 @media screen and (width<= 981px) {
