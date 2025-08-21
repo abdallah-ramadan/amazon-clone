@@ -1,3 +1,4 @@
+
 function Input({ type = "text", placeholder, value, onChange }) {
   return (
     <input
@@ -10,5 +11,5 @@ function Input({ type = "text", placeholder, value, onChange }) {
     />
   );
 }
-
 export default Input;
+
