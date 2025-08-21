@@ -11,5 +11,8 @@ function Input({ type = "text", placeholder, value, onChange }) {
     />
   );
 }
+<<<<<<< HEAD
 export default Input;
 
+=======
+>>>>>>> 94e58f0c1742a8fc8c2242625cc09b49577e2526
