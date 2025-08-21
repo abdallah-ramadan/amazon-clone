@@ -1,3 +1,5 @@
+
+import { auth } from "../../firebaseconfig"; 
 import {
   Star,
   ShoppingCart,
@@ -18,6 +20,15 @@ const ProductDetails = () => {
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
+  const navigate = useNavigate();
+
+  const handleBuyNow = () => {
+    if (!auth.currentUser) {
+      navigate("/login");
+    } else {
+      navigate("/cart");
+    }
+  };
   useEffect(() => {
     if (id) {
       dispatch(fetchProductDetails(id));
@@ -148,7 +159,7 @@ const ProductDetails = () => {
               <button className="tw-w-full tw-transition tw-bg-yellow-500 hover:tw-bg-yellow-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer" onClick={() => { navigate('/cart') }}>
                 Add to Cart
               </button>
-              <button className="tw-w-full tw-transition tw-bg-orange-500 hover:tw-bg-orange-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer">
+              <button className="tw-w-full tw-transition tw-bg-orange-500 hover:tw-bg-orange-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer onClick={handleBuyNow}">
                 Buy Now
               </button>
             </div>
@@ -186,5 +197,4 @@ const ProductDetails = () => {
     </div>
   );
 };
-
 export default ProductDetails;
