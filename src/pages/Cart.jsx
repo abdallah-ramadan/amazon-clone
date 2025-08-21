@@ -1,25 +1,25 @@
 import React from 'react'
-import ProductCartItem from '../components/ProductCartItem'
-import CartTotalCard from '../components/CartTotalCard'
-import CartOtherProduct from '../components/CartOtherProduct'
+import ProductCartItem from '../components/cart/ProductCartItem'
+import CartTotalCard from '../components/cart/CartTotalCard'
+import CartOtherProduct from '../components/cart/CartOtherProduct'
 
 function Cart() {
     let emptyCart = false
     if (emptyCart === true) {
         return (<>
-            <div className="flex flex-col items-center justify-center h-screen-minus-160 text-center p-4">
-                <img src="/empty-cart.svg" alt="Empty Cart" className="w-40 mb-6" />
-                <h2 className="text-2xl font-semibold mb-2 text-gray-800">
+            <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-screen-minus-160 tw-text-center tw-p-4">
+                <img src="/empty-cart.svg" alt="Empty Cart" className="tw-w-40 tw-mb-6" />
+                <h2 className="tw-text-2xl tw-font-semibold tw-mb-2 tw-text-gray-800">
                     Your Amazon Cart is empty
                 </h2>
 
-                <p className="text-gray-600 mb-6">
+                <p className="tw-text-gray-600 tw-mb-6">
                     Shop today's deals or sign in to your account for your saved items.
                 </p>
 
-                <div className="flex gap-3">
+                <div className="tw-flex tw-gap-3">
                     <button
-                        className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-medium px-6 py-2 rounded shadow transition cursor-pointer"
+                        className="tw-bg-yellow-400 hover:tw-bg-yellow-500 tw-text-gray-800 tw-font-medium tw-px-6 tw-py-2 tw-rounded tw-shadow tw-transition tw-cursor-pointer"
                     >
                         Continue Shopping
                     </button>
@@ -29,25 +29,25 @@ function Cart() {
         )
     }
     return (
-        <div className='bg-[#EAEDED] py-3.5 px-5 min-h-screen'>
-            <div className='flex gap-5 flex-col-reverse lg:flex-row'>
-                <div className='flex-1 flex flex-col gap-y-5'>
-                    <div className=' bg-white pt-5 pb-4'>
-                        <div className='px-5'>
-                            <h1 className='text-[28px] font-medium mb-2'>
+        <div className='tw-bg-[#EAEDED] tw-py-3.5 tw-px-5 tw-min-h-screen'>
+            <div className='tw-flex tw-gap-5 tw-flex-col-reverse lg:tw-flex-row'>
+                <div className='tw-flex-1 tw-flex tw-flex-col tw-gap-y-5'>
+                    <div className='tw-bg-white tw-pt-5 tw-pb-4'>
+                        <div className='tw-px-5'>
+                            <h1 className='tw-text-[28px] tw-font-medium tw-mb-2'>
                                 Shopping Cart
                             </h1>
-                            <div className='border-t border-[#E7E7E7]'>
+                            <div className='tw-border-t tw-border-[#E7E7E7]'>
                                 <ProductCartItem />
                                 <ProductCartItem />
                                 <ProductCartItem />
                             </div>
                         </div>
                     </div>
-                    <div className='bg-white py-7'>
+                    <div className='tw-bg-white tw-py-7'>
                     </div>
                 </div>
-                <div className=' lg:w-[300px] w-full flex flex-col gap-y-5'>
+                <div className='lg:tw-w-[300px] tw-w-full tw-flex tw-flex-col tw-gap-y-5'>
                     <CartTotalCard />
                     <CartOtherProduct />
                 </div>

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 2,
+    "plot": "Up to 70% off | Styles for men",
+    "subcategories": [
+      { "category": "mens-shirts", "title": "Men's Shirts", "img": "/category/mens-shirts.webp" },
+      { "category": "mens-shoes", "title": "Men's Shoes", "img": "/category/mens-shoes.webp" },
+      { "category": "mens-watches", "title": "Men's Watches", "img": "/category/mens-watches.webp" }
+    ]
+},
+{
+    "id": 3,
+    "plot": "Up to 70% off | Styles for women",
+    "subcategories": [
+        { "category": "womens-bags", "title": "Women's Bags", "img": "/category/womens-bags.webp" },
+        { "category": "womens-dresses", "title": "Women's Dresses", "img": "/category/womens-dresses.webp" },
+        { "category": "womens-jewellery", "title": "Women's Jewellery", "img": "/category/womens-jewellery.webp" },
+        { "category": "womens-shoes", "title": "Women's Shoes", "img": "/category/womens-shoes.webp" },
+        { "category": "womens-watches", "title": "Women's Watches", "img": "/category/womens-watches.webp" },
+        { "category": "tops", "title": "Tops", "img": "/category/tops.webp" }
+    ]
+  },
+  {
+    "id": 4,
+    "plot": "We Make Technology Affordable.",
+    "subcategories": [
+      { "category": "laptops", "title": "Laptops", "img": "/category/laptops.webp" },
+      { "category": "smartphones", "title": "Smartphones", "img": "/category/smartphones.webp" },
+      { "category": "tablets", "title": "Tablets", "img": "/category/tablets.webp" },
+      { "category": "mobile-accessories", "title": "Mobile Accessories", "img": "/category/mobile-accessories.webp" }
+    ]
+  },
+  {
+    "id": 5,
+    "plot": "Make Your Home Significantly Better.",
+    "subcategories": [
+      { "category": "furniture", "title": "Furniture", "img": "/category/furniture.webp" },
+      { "category": "home-decoration", "title": "Home Decoration", "img": "/category/home-decoration.webp" },
+      { "category": "kitchen-accessories", "title": "Kitchen Accessories", "img": "/category/kitchen-accessories.webp" },
+      { "category": "groceries", "title": "Groceries", "img": "/category/groceries.webp" }
+    ]
+  },
+  {
+    "id": 1,
+    "plot": "Beauty",
+    "subcategories": [
+      { "category": "beauty", "title": "Beauty", "img": "/category/beauty.webp" },
+      { "category": "skin-care", "title": "Skin Care", "img": "/category/skin-care.webp" },
+      { "category": "fragrances", "title": "Fragrances", "img": "/category/fragrances.webp" }
+    ]
+  },
+  {
+    "id": 6,
+    "plot": "Sports",
+    "subcategories": [
+      { "category": "sports-accessories", "title": "Sports Accessories", "img": "/category/sports-accessories.webp" }
+    ]
+  },
+  {
+    "id": 7,
+    "plot": "Vehicles",
+    "subcategories": [
+      { "category": "motorcycle", "title": "Motorcycle", "img": "/category/motorcycle.webp" },
+      { "category": "vehicle", "title": "Vehicle", "img": "/category/vehicle.webp" }
+    ]
+  },
+  {
+    "id": 8,
+    "plot": "Accessories",
+    "subcategories": [
+      { "category": "sunglasses", "title": "Sunglasses", "img": "/category/sunglasses.webp" }
+    ]
+  }
+]
