@@ -20,7 +20,7 @@ const ProductDetails = () => {
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleBuyNow = () => {
     if (!auth.currentUser) {
