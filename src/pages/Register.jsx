@@ -51,7 +51,7 @@ function Register() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       await updateProfile(userCredential.user, { displayName: name });
       setSuccess("Account created successfully");
-      setTimeout(() => navigate("/"), 1500);
+      setTimeout(() => navigate("/"), 1000);
     } catch (err) { setError(getErrorMessage(err.code)); }
   };
 
