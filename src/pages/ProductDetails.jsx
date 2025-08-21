@@ -1,3 +1,5 @@
+import { auth } from "../../firebaseconfig"; // adjust path if needed
+import { useNavigate } from "react-router-dom";
 import {
   Star,
   ShoppingCart,
@@ -7,10 +9,18 @@ import {
   CreditCardIcon,
 } from "lucide-react";
 import React, { useState } from "react";
-
 const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState(0);
+  const navigate = useNavigate();
+
+  const handleBuyNow = () => {
+    if (!auth.currentUser) {
+      navigate("/login");
+    } else {
+      navigate("/cart");
+    }
+  };
   return (
     <div className="tw-p-5 tw-min-h-screen">
       {/* Breadcrumb */}
@@ -139,7 +149,7 @@ const ProductDetails = () => {
               <button className="tw-w-full tw-transition tw-bg-yellow-500 hover:tw-bg-yellow-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer">
                 Add to Cart
               </button>
-              <button className="tw-w-full tw-transition tw-bg-orange-500 hover:tw-bg-orange-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer">
+              <button className="tw-w-full tw-transition tw-bg-orange-500 hover:tw-bg-orange-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer" onClick={handleBuyNow}>
                 Buy Now
               </button>
             </div>
