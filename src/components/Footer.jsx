@@ -1,7 +1,7 @@
 import React from 'react'
 
-import engllish from "../assets/images/india.jpg";
-import arabic from "../assets/images/egypt.jpg";
+import engllish from "../assets/Images/india.jpg";
+import arabic from "../assets/Images/egypt.jpg";
 
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
@@ -210,5 +210,6 @@ export default function Footer() {
         </>
     );
 }
+
 
 // [#FFCC00] #c49d05ff
