@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import engllish from "../assets/images/india.jpg";
-import arabic from "../assets/images/egypt.jpg";
+import engllish from "../assets/Images/india.jpg";
+import arabic from "../assets/Images/egypt.jpg";
 import { Link, NavLink } from "react-router-dom";
 
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
@@ -195,4 +195,5 @@ export default function Navbar() {
             </header>
         </>
     );
+
 }
