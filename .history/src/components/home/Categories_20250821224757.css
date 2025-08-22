@@ -1,0 +1,12 @@
+.category{
+    margin-top: -150px;
+    z-index: 100;
+    position: relative;
+}
+.category .card:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+.category-item img{
+    height: 100px;
+}
