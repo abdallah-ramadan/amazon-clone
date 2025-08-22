@@ -13,6 +13,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductDetails } from "../Redux/productDetailsSlice";
 import { Loader } from "../components/Loader";
+import Reviews from "../components/Reviews";
 const ProductDetails = () => {
 
   const navigate = useNavigate();
@@ -160,7 +161,7 @@ const ProductDetails = () => {
             </div>
 
             <div className="tw-space-y-3">
-              <button className="tw-w-full tw-transition tw-bg-yellow-500 hover:tw-bg-yellow-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer" onClick={() => { navigate('/cart') }}>
+              <button className="tw-w-full tw-transition tw-bg-yellow-500 hover:tw-bg-yellow-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer" >
                 Add to Cart
               </button>
               <button className="tw-w-full tw-transition tw-bg-orange-500 hover:tw-bg-orange-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer" onClick={handleBuyNow}>
@@ -196,8 +197,11 @@ const ProductDetails = () => {
             </p>
           </div>
         </div>
-        <div className="reviews"></div>
       </div>
+        <hr class="border border-2 border-secondary my-5" />
+        <div className="reviews">
+          <Reviews reviews={product.reviews} />
+        </div>
     </div>
   );
 };
