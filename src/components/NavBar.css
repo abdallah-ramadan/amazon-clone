@@ -1,0 +1,45 @@
+.tw-bg-amazon_blue {
+  background-color: #131921;
+}
+
+.tw-bg-amazon_yellow {
+  background-color: #febd69;
+}
+
+.tw-text-amazon_black {
+  color: #111;
+}
+
+.tw-text-whiteText {
+  color: white;
+}
+
+.tw-headerHover {
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.tw-headerHover:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 640px) {
+  .tw-xs\:justify-evenly {
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 768px) {
+  .tw-mdl\:block {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tw-lgl\:inline-flex {
+    display: inline-flex;
+  }
+}
