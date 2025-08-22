@@ -1,4 +1,3 @@
-
 import { auth } from "../../firebaseconfig";
 import {
   Star,
@@ -13,20 +12,21 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductDetails } from "../Redux/productDetailsSlice";
 import { Loader } from "../components/Loader";
-import Reviews from "../components/Reviews";
+import { getUser, userInteraction } from "../services/userServices";
+import toast from "react-hot-toast";
 const ProductDetails = () => {
-
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
+  const [user, setUser] = useState(null);
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
- raniamedhat
+//  raniamedhat
   // const navigate = useNavigate();
 
 
- master
+//  master
   const handleBuyNow = () => {
     if (!auth.currentUser) {
       navigate("/login");
@@ -39,11 +39,47 @@ const ProductDetails = () => {
       dispatch(fetchProductDetails(id));
     }
   }, [dispatch, id]);
+  useEffect(() => {
+    setUser(getUser());
+  }, []);
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState(0);
 
-  if (loading) return <Loader />
-  if (error) return <div className="alert alert-danger w-75 m-auto mt-5" role="alert">Error:{error}</div>
+  const handleAddToCart = () => {
+    console.log(user);
+    if (user) {
+      toast.success("Added to Cart Successfully!");
+
+
+      userInteraction({
+        user: {
+          ...user,
+          cart: [...(user.cart || []), { ...product, quantity }],
+        },
+      });
+
+      navigate("/cart");
+    }
+  };
+  const handleAddToFavorite = () => {
+    if(user){
+      toast.success("Added to Favorite Successfully !");
+
+      userInteraction({
+        user: { ...user, favorite: [...(user.favorite || []), { ...product }] },
+      });
+
+    }
+
+  };
+
+  if (loading) return <Loader />;
+  if (error)
+    return (
+      <div className="alert alert-danger w-75 m-auto mt-5" role="alert">
+        Error:{error}
+      </div>
+    );
   if (!product) return <p className="tw-text-center mt-5">No product found.</p>;
 
   return (
@@ -75,10 +111,9 @@ const ProductDetails = () => {
                 onClick={() => setActiveImage(index)}
                 src={img}
                 alt={`Thumbnail ${index}`}
-                className={`tw-w-20 tw-h-20 tw-object-cover tw-border-2 tw-rounded cursor-pointer ${activeImage === index
-                  ? "tw-border-blue-500"
-                  : "tw-opacity-70"
-                  }`}
+                className={`tw-w-20 tw-h-20 tw-object-cover tw-border-2 tw-rounded cursor-pointer ${
+                  activeImage === index ? "tw-border-blue-500" : "tw-opacity-70"
+                }`}
               />
             ))}
           </div>
@@ -103,7 +138,9 @@ const ProductDetails = () => {
                 {product.rating} ★
               </span>
             </div>
-            <span className="tw-text-gray-600 tw-text-sm">Verified Purchase</span>
+            <span className="tw-text-gray-600 tw-text-sm">
+              Verified Purchase
+            </span>
             <span className="tw-text-blue-600 tw-text-sm tw-cursor-pointer">
               See all reviews
             </span>
@@ -112,10 +149,20 @@ const ProductDetails = () => {
           {/* Price Section */}
           <div className="tw-bg-gray-100 tw-p-4 tw-rounded-lg">
             <div className="tw-flex tw-items-baseline tw-gap-2 tw-mb-2">
-              <span className="tw-text-3xl tw-font-bold tw-text-red-600">${product.price}</span>
-              <span className="tw-text-lg tw-text-gray-500 tw-line-through">${(product.price + product.price * (product.discountPercentage / 100)).toFixed(2)}</span>
+              <span className="tw-text-3xl tw-font-bold tw-text-red-600">
+                ${product.price}
+              </span>
+              <span className="tw-text-lg tw-text-gray-500 tw-line-through">
+                $
+                {(
+                  product.price +
+                  product.price * (product.discountPercentage / 100)
+                ).toFixed(2)}
+              </span>
             </div>
-            <p className="tw-text-sm tw-text-gray-600 tw-mb-2">All price includes VAT</p>
+            <p className="tw-text-sm tw-text-gray-600 tw-mb-2">
+              All price includes VAT
+            </p>
             <p className="tw-text-green-600 tw-text-sm tw-font-medium">
               Up to 8% cashback off with master credit cards.
             </p>
@@ -150,7 +197,7 @@ const ProductDetails = () => {
               <select
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
-                className="tw-border tw-rounded tw-px-3 tw-py-1"
+                className="tw-border tw-rounded tw-px-4 tw-py-2"
               >
                 <option value={1}>1</option>
                 <option value={2}>2</option>
@@ -161,10 +208,16 @@ const ProductDetails = () => {
             </div>
 
             <div className="tw-space-y-3">
-              <button className="tw-w-full tw-transition tw-bg-yellow-500 hover:tw-bg-yellow-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer" >
+              <button
+                className="tw-w-full tw-transition tw-bg-yellow-500 hover:tw-bg-yellow-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer"
+                onClick={handleAddToCart}
+              >
                 Add to Cart
               </button>
-              <button className="tw-w-full tw-transition tw-bg-orange-500 hover:tw-bg-orange-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer" onClick={handleBuyNow}>
+              <button
+                className="tw-w-full tw-transition tw-bg-orange-500 hover:tw-bg-orange-600 tw-text-white tw-font-bold tw-py-3 tw-rounded-lg tw-cursor-pointer"
+                onClick={handleBuyNow}
+              >
                 Buy Now
               </button>
             </div>
@@ -184,7 +237,10 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <button className="tw-w-full tw-mt-3 tw-bg-red-500 tw-transition tw-text-white hover:tw-bg-red-600 tw-border tw-rounded-lg tw-py-2 tw-border-gray-300 tw-cursor-pointer">
+            <button
+              onClick={handleAddToFavorite}
+              className="tw-w-full tw-mt-3 tw-bg-red-500 tw-transition tw-text-white hover:tw-bg-red-600 tw-border tw-rounded-lg tw-py-2 tw-border-gray-300 tw-cursor-pointer"
+            >
               Add to Favorite
             </button>
           </div>
