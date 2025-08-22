@@ -11,7 +11,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductDetails } from "../Redux/productDetailsSlice";
+import { fetchProductDetails } from "../redux/productDetailsSlice";
 import { Loader } from "../components/Loader";
 import Reviews from "../components/product-details/Reviews";
 import { addToWishlist } from "../redux/WishlistSlice";
