@@ -22,6 +22,11 @@ const ProductDetails = () => {
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
+//  raniamedhat
+  // const navigate = useNavigate();
+
+
+//  master
   const handleBuyNow = () => {
     if (!auth.currentUser) {
       navigate("/login");
@@ -248,8 +253,11 @@ const ProductDetails = () => {
             </p>
           </div>
         </div>
-        <div className="reviews"></div>
       </div>
+        <hr class="border border-2 border-secondary my-5" />
+        <div className="reviews">
+          <Reviews reviews={product.reviews} />
+        </div>
     </div>
   );
 };
