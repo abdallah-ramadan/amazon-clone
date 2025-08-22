@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Eye icons
-import Logo from '../assets/Images/logo.png'
+import Logo from '../assets/Images/Logo.png'
 import LoginFooter from '../components/login-register/LoginFooter'
 import Input from '../components/login-register/Input'
 import Button from '../components/login-register/Button'
