@@ -18,7 +18,7 @@ export default function Navbar() {
                 {/* Top section with logo, search, and account links */}
                 <div className="tw-flex tw-items-center tw-justify-between tw-px-4 tw-py-2 md:tw-px-6 md:tw-py-3">
                     {/* Logo */}
-                    <Link to={"home"} className="md:tw-pe-4">
+                    <Link to={"/"} className="md:tw-pe-4">
                         <span className="tw-sr-only">Your Company</span>
                         <img className="tw-h-8 md:tw-h-10" src='/logo-nav.png' width={100} alt="logo" />
                     </Link>
@@ -197,3 +197,4 @@ export default function Navbar() {
     );
 
 }
+
